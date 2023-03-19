@@ -1,0 +1,104 @@
+ 
+body {
+    background-color:#ab7ad2;
+}
+
+h1 {
+    color: white;
+    font-family: cursive;
+    margin: 5px 30%;  
+    font-size: 70px;
+}
+
+p{
+    font-size: 50px;
+    margin: 0.5% 30% 0px 200px ; 
+    color:#e3dc11;
+    font-family: fantasy;
+}
+
+#UserPrf {
+    background-color: #ffa60038;
+    border: white solid;
+    /*border-radius: 58px;*/
+    height: 200px;
+    font-size: 24px;
+    font-family: cursive;
+    margin: 20px 18px;
+    padding: 10px;
+    width: 250px;
+    float: right;
+}
+
+.GameDiv{
+    border-radius: 68px;
+    background:blueviolet;
+    width: 600px;
+    height: 440px;
+    margin: 30px 0px 100px 15%;
+    float:right;
+    position:absolute;   
+}
+
+#start-Button{
+    margin: 20px 80px 0px 265px;
+    color:indigo;
+    height: 40px;
+    width: 70px;
+    font-family: monospace;
+    font-size: 17px;
+    border:dashed;
+    border-block-color:#6476bd; 
+    cursor: pointer;
+}
+
+#round-Win{
+    margin-top: 20px;
+    margin-left: 230px;
+}
+
+#choice-El{
+    padding: 10px;
+    margin-left: 135px;
+}
+
+h3 {  
+    color: white; 
+    margin: 0px;
+    font-size: 30px;   
+}
+section{
+    display: flex;
+    align-items: center;
+    margin-right: 15px;;
+    margin-top: 20px;
+    margin-left: 80px;
+    padding: 10px;
+}
+
+#rock, #paper, #scissors {
+    
+    padding: 10px 10px;
+    border-radius: 20px;
+    border: none;
+    margin-right: 50px;
+    font-size: 80px;
+    height: 130px;
+    cursor: pointer;
+    align-items: center;
+    
+} 
+
+#score{
+    color: white;
+    font-size:25px;
+    font-family: Times New Roman;
+    margin-left: 180px;
+       
+}
+
+
+
+
+
+
