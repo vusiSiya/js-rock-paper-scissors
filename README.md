@@ -12,10 +12,7 @@ github.com/michalosman/rock-paper-scissors
 * HTML
 * CSS
 
-## Getting Started:
-replit HTML, CSS, JS template.
-
-## Debugging:
+## Tools:
 * Replit online IDE
 * Chrome DevTools
 
