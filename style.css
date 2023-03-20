@@ -1,12 +1,13 @@
- 
 body {
-    background-color:#ab7ad2;
+    background-color:#827717;
+    margin: 20px;
+    padding: 10px;
 }
 
 h1 {
     color: white;
     font-family: cursive;
-    margin: 5px 30%;  
+    margin-left: 16%; 
     font-size: 70px;
 }
 
@@ -35,7 +36,7 @@ p{
     background:blueviolet;
     width: 600px;
     height: 440px;
-    margin: 30px 0px 100px 15%;
+    margin-left: 20%;
     float:right;
     position:absolute;   
 }
@@ -54,7 +55,8 @@ p{
 
 #round-Win{
     margin-top: 20px;
-    margin-left: 230px;
+    margin-left: 35% ;
+    padding: 10px;
 }
 
 #choice-El{
@@ -67,6 +69,7 @@ h3 {
     margin: 0px;
     font-size: 30px;   
 }
+
 section{
     display: flex;
     align-items: center;

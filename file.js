@@ -44,10 +44,16 @@ function Game() {
         RoundWinner.textContent = `${winner}`;
         score.textContent = `Player: ${PlayerPts}   Computer: ${ComputerPts}`
         
-        if (ComputerPts ===5 || PlayerPts === 5) {
+        if (ComputerPts ===5 || PlayerPts === 5) {           
             let overAllDecision = OverAllWinner(PlayerPts, ComputerPts);
             RoundWinner.textContent = overAllDecision;
-            isAlive = false;// isAlive is now declared false to allow the person to press start again, and start the game over.
+
+            isAlive = false; // isAlive is set to false, forcing the player to press start.
+            //
+            choiceEl.innerHTML =""
+            score.textContent = ""
+            ComputerPts *= 0; PlayerPts *=0;
+        
         }
     }
 }
