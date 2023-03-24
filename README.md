@@ -7,7 +7,7 @@ Live Demo: https://js-rock-paper-scissors.siyabongamahlal.repl.co/
 This project is inspired by Michal Osman's Rock-Paper-Scissors game, available at: 
 github.com/michalosman/rock-paper-scissors
 
-## Language: 
+## Languages: 
 * JavaScript
 * HTML
 * CSS
