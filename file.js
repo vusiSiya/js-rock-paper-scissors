@@ -1,64 +1,52 @@
-const RockButn = document.getElementById('rock')
-const PaperButn = document.getElementById('paper')
-const ScissorsButn = document.getElementById('scissors')
-const choiceEl = document.getElementById('choice-El');
-const RoundWinner = document.getElementById('round-Win');
-const GameWinner = document.getElementById('game-Win');
-const StartBtn = document.getElementById('start-Button')
+const rockBtn = document.getElementById('rock')
+const paperBtn = document.getElementById('paper')
+const scissorsBtn = document.getElementById('scissors')
+const choiceEl = document.getElementById('choice-el');
+const startBtn = document.getElementById('start-Button')
 const score = document.getElementById('score')
+const roundWinner = document.getElementById('round-winner')
 
-let PlayerPts = 0;
-let ComputerPts = 0;
+let playerPts = 0;
+let computerPts = 0;
 let pick;
 let isAlive = false;
 
-StartBtn.addEventListener('click', function(){
-    isAlive = true;
+[rockBtn,paperBtn,scissorsBtn].forEach( btn =>{
+  btn.addEventListener("click", (e)=>{
+    const {id} = e.target
+    const pick = (id === "rock") 
+      ? "rock" 
+      : (id === "paper") ? "paper" : "scissors";
+    Game(pick);
+  })
 })
 
-RockButn.addEventListener('click', function () {
-    pick = "rock"
-    Game();
-})
-
-PaperButn.addEventListener('click', function () {
-    pick = "paper"
-    Game();
-})
-
-ScissorsButn.addEventListener('click', function () {
-    pick = "scissors"
-    Game();
-})
-console.log(pick)
-
-function Game() {
-    if (isAlive && pick) {
-        let choice1 = Player(pick);
-        let choice2 = Computer();
+function Game(_pick) {
+    if (_pick) {
+        let choice1 = getPlayerImoji(_pick);
+        let choice2 = getComputerImoji();
             
-        let choices = `<h3> You: ${choice1} Computer: ${choice2}</h3>`
+        let choices = `<span> You: ${choice1} Computer: ${choice2}</span>`
         choiceEl.innerHTML = choices;  
-            
+      
         let winner = RoundWin(choice1, choice2)
-        RoundWinner.textContent = `${winner}`;
-        score.textContent = `Player: ${PlayerPts}   Computer: ${ComputerPts}`
+        roundWinner.textContent = `${winner}`;
+        score.textContent = `Player: ${playerPts}   Computer: ${computerPts}`
         
-        if (ComputerPts ===5 || PlayerPts === 5) {           
-            let overAllDecision = OverAllWinner(PlayerPts, ComputerPts);
-            RoundWinner.textContent = overAllDecision;
+        if (computerPts ===5 || playerPts === 5) {           
+            let overAllDecision = OverAllWinner(playerPts, computerPts);
+            roundWinner.textContent = overAllDecision;
 
-            isAlive = false; // isAlive is set to false, forcing the player to press start.
-            //
+            isAlive = false; 
             choiceEl.innerHTML =""
             score.textContent = ""
-            ComputerPts *= 0; PlayerPts *=0;
+            computerPts *= 0; playerPts *=0;
         
         }
     }
 }
 
-function Player(_pick) {
+function getPlayerImoji(_pick) {
     let choice=""
     switch (_pick) {
         case "rock":
@@ -73,13 +61,11 @@ function Player(_pick) {
         default:
             break;
     }
-    console.log(`player: ${choice}`)
     
     return choice;
 }
 
-function Computer() {
-  
+function getComputerImoji() {  
     let randmNum = Math.floor(Math.random() * 3) + 1;
         let choice
         switch (randmNum) {
@@ -93,10 +79,9 @@ function Computer() {
                 choice = "✌";
                 break;
             default:
-                Computer();
+                getComputerImoji();
                 break;   
         }
-    console.log(`computer: ${choice}`)
     return choice;
 }
 
@@ -108,26 +93,31 @@ function RoundWin(_choice1, _choice2){
     }
     else if ( (_choice1 === "✋" && _choice2 === "✊") || (_choice1 === "✌" && _choice2 === "✋") || (_choice1 === "✊" && _choice2 === "✌") ){
         decision = `${_choice1} beats ${_choice2}`
-        PlayerPts++;      
+        playerPts++;      
     }
     else if ( (_choice1 === "✊" && _choice2 === "✋") || (_choice1 === "✋" && _choice2 === "✌") || (_choice1 === "✌" && _choice2 === "✊") ){
         decision = `${_choice2} beats ${_choice1}`
-        ComputerPts++;
+        computerPts++;
     }
     return decision;  
 }
 
-function OverAllWinner(_PlayerPoints, _ComputerPoints) {
+function OverAllWinner(_playerPoints, _computerPoints) {
     let finalDecision =""
-    if (_PlayerPoints > _ComputerPoints) {
+    if (_playerPoints > _computerPoints) {
         finalDecision = "You Won!!";
     }
-    else if (_PlayerPoints < _ComputerPoints) {       
+    else if (_playerPoints < _computerPoints) {       
         finalDecision = "You Lost";
     }
-    else if (_PlayerPoints === _ComputerPoints) { 
+    else if (_playerPoints === _computerPoints) { 
         finalDecision ="It's a Tie!!!"      
-    }        
+    } 
+    startBtn.style.display = "block";
+    startBtn.innerText = "Start Over";
     return finalDecision;
+  
 }
-
+function handleClick(e) {
+  startBtn.style.display = "none";
+}
