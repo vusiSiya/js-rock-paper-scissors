@@ -1,107 +1,59 @@
 body {
     background-color:#827717;
-    margin: 20px;
-    padding: 10px;
+    margin: 1em;
 }
-
-h1 {
-    color: white;
-    font-family: cursive;
-    margin-left: 16%; 
-    font-size: 70px;
+h1{
+  margin:0;
 }
-
-p{
-    font-size: 50px;
-    margin: 0.5% 30% 0px 200px ; 
-    color:#e3dc11;
-    font-family: fantasy;
+main {
+  color: white;
+  font: bold 2rem Helvetica;
+  padding: 1em;
+  display: grid;
+  gap:1em;
+  text-align: center;
 }
-
-#UserPrf {
-    background-color: #ffa60038;
-    border: white solid;
-    /*border-radius: 58px;*/
-    height: 200px;
-    font-size: 24px;
-    font-family: cursive;
-    margin: 20px 18px;
-    padding: 10px;
-    width: 250px;
-    float: right;
+main .game-ui{
+  display: flex;
+  flex-direction: column;
+  background:blueviolet;
+  width: auto;
+  display: grid;
+  padding: .5em;
+  border-radius: .5em;
+  gap: 0.5em
 }
-
-.GameDiv{
-    border-radius: 68px;
-    background:blueviolet;
-    width: 600px;
-    height: 440px;
-    margin-left: 20%;
-    float:right;
-    position:absolute;   
+section#btns{
+  padding:.5em;
+  width: auto;
+  display: grid;
+  grid-column-gap:1em;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
 }
-
 #start-Button{
-    margin: 20px 80px 0px 265px;
-    color:indigo;
-    height: 40px;
-    width: 70px;
-    font-family: monospace;
-    font-size: 17px;
-    border:dashed;
-    border-block-color:#6476bd; 
-    cursor: pointer;
-}
-
-#round-Win{
-    margin-top: 20px;
-    margin-left: 35% ;
-    padding: 10px;
-}
-
-#choice-El{
-    padding: 10px;
-    margin-left: 135px;
-}
-
-h3 {  
-    color: white; 
-    margin: 0px;
-    font-size: 30px;   
-}
-
-section{
-    display: flex;
-    align-items: center;
-    margin-right: 15px;;
-    margin-top: 20px;
-    margin-left: 80px;
-    padding: 10px;
+  background-color:indigo;
+  color: white;
+  width: 10em;
+  margin: auto;
+  padding: 1em 0.5em;
+  border-block-color:#6476bd;
+  border-radius: 0.3em;
+  cursor: pointer;
 }
 
 #rock, #paper, #scissors {
-    
-    padding: 10px 10px;
-    border-radius: 20px;
-    border: none;
-    margin-right: 50px;
-    font-size: 80px;
-    height: 130px;
-    cursor: pointer;
-    align-items: center;
-    
+  border-radius: 0.4rem;
+  border:1px solid black;
+  font-size: 12rem;
+  padding: 0.1em;
+  cursor: pointer;
+  align-items:center;
 } 
 
-#score{
-    color: white;
-    font-size:25px;
-    font-family: Times New Roman;
-    margin-left: 180px;
-       
+footer{
+  text-align: center;
+  color: white;
+  font: bold 1.5rem Comic-Sans;
 }
-
-
-
-
-
 
