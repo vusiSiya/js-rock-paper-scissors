@@ -2,7 +2,7 @@ const rockBtn = document.getElementById('rock')
 const paperBtn = document.getElementById('paper')
 const scissorsBtn = document.getElementById('scissors')
 const choiceEl = document.getElementById('choice-el');
-const startBtn = document.getElementById('start-Button')
+const startBtn = document.getElementById('start-btn')
 const score = document.getElementById('score')
 const roundWinner = document.getElementById('round-winner')
 
@@ -22,16 +22,17 @@ let isAlive = false;
 })
 
 function Game(_pick) {
-    if (_pick) {
+    if (isAlive) {
         let choice1 = getPlayerImoji(_pick);
         let choice2 = getComputerImoji();
             
-        let choices = `<span> You: ${choice1} Computer: ${choice2}</span>`
+        let choices = `
+        <span>You: ${choice1} \t\t Computer: ${choice2}</span>`
         choiceEl.innerHTML = choices;  
       
         let winner = RoundWin(choice1, choice2)
         roundWinner.textContent = `${winner}`;
-        score.textContent = `Player: ${playerPts}   Computer: ${computerPts}`
+        score.textContent = `Player: ${playerPts} \t\t Computer: ${computerPts}`
         
         if (computerPts ===5 || playerPts === 5) {           
             let overAllDecision = OverAllWinner(playerPts, computerPts);
@@ -89,7 +90,7 @@ function RoundWin(_choice1, _choice2){
     let decision = ""
     
     if ( (_choice1 === "✊" && _choice2 === "✊") || (_choice1 === "✋" && _choice2 === "✋") || (_choice1 === "✌" && _choice2 === "✌") ){
-        decision ="Draw!!"
+        decision ="Draw !"
     }
     else if ( (_choice1 === "✋" && _choice2 === "✊") || (_choice1 === "✌" && _choice2 === "✋") || (_choice1 === "✊" && _choice2 === "✌") ){
         decision = `${_choice1} beats ${_choice2}`
@@ -114,10 +115,12 @@ function OverAllWinner(_playerPoints, _computerPoints) {
         finalDecision ="It's a Tie!!!"      
     } 
     startBtn.style.display = "block";
-    startBtn.innerText = "Start Over";
+    startBtn.innerText = "start over";
     return finalDecision;
   
 }
 function handleClick(e) {
+  isAlive = true;
   startBtn.style.display = "none";
+  roundWinner.innerText = "Choose you weapon"
 }
