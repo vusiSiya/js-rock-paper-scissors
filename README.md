@@ -1,14 +1,11 @@
-# Rock-Paper-Scissors Game🎉
-A JavaScript version of my previous C# rock-paper-scissors-game.
+## rock-paper-scissors👊🖐✌
+a web version of my previous rock-paper-scissors console app
 
-## Inspiration:
-This project is inspired by Michal Osman's Rock-Paper-Scissors game, available at: 
-github.com/michalosman/rock-paper-scissors
+<a href="https://vusisiya.github.io/js-rock-paper-scissors/">**Live Demo**🏌️‍♂️
+### Inspiration:
+This game's UI is inspired by michalosman's rock-paper-scissors <a href="https://github.com/michalosman/rock-paper-scissors">**game**
 
-## Languages: 
-* JavaScript
-* HTML
-* CSS
+
 
 
 
