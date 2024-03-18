@@ -1,8 +1,6 @@
 # Rock-Paper-Scissors Game🎉
 A JavaScript version of my previous C# rock-paper-scissors-game.
 
-<a href="https://js-rock-paper-scissors.siyabongamahlal.repl.co/">Live Demo👈
-
 ## Inspiration:
 This project is inspired by Michal Osman's Rock-Paper-Scissors game, available at: 
 github.com/michalosman/rock-paper-scissors
@@ -12,9 +10,6 @@ github.com/michalosman/rock-paper-scissors
 * HTML
 * CSS
 
-## Tools:
-* Replit online IDE
-* VS Code
 
 
 
