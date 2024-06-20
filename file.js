@@ -12,7 +12,7 @@ let pick;
 let isAlive = false;
 
 [rockBtn,paperBtn,scissorsBtn].forEach( btn =>{
-  btn.addEventListener("click", (e)=>{
+  btn.addEventListener("mousedown", (e)=>{
     const {id} = e.target
     const pick = (id === "rock") 
       ? "rock" 
@@ -27,12 +27,17 @@ function Game(_pick) {
         let choice2 = getComputerImoji();
             
         let choices = `
-        <span>You: ${choice1} \t\t Computer: ${choice2}</span>`
+            <p>Computer:${choice2}</p>
+            <p>You:${choice1}</p>
+        `
         choiceEl.innerHTML = choices;  
       
         let winner = RoundWin(choice1, choice2)
         roundWinner.textContent = `${winner}`;
-        score.textContent = `Player: ${playerPts} \t\t Computer: ${computerPts}`
+        score.innerHTML = `
+            <p>Computer: ${computerPts}</p>
+            <p>Your Score: ${playerPts}</p>
+        `
         
         if (computerPts ===5 || playerPts === 5) {           
             let overAllDecision = OverAllWinner(playerPts, computerPts);
@@ -90,7 +95,7 @@ function RoundWin(_choice1, _choice2){
     let decision = ""
     
     if ( (_choice1 === "✊" && _choice2 === "✊") || (_choice1 === "✋" && _choice2 === "✋") || (_choice1 === "✌" && _choice2 === "✌") ){
-        decision ="Draw !"
+        decision ="Draw!"
     }
     else if ( (_choice1 === "✋" && _choice2 === "✊") || (_choice1 === "✌" && _choice2 === "✋") || (_choice1 === "✊" && _choice2 === "✌") ){
         decision = `${_choice1} beats ${_choice2}`
@@ -115,7 +120,7 @@ function OverAllWinner(_playerPoints, _computerPoints) {
         finalDecision ="It's a Tie!!!"      
     } 
     startBtn.style.display = "block";
-    startBtn.innerText = "start over";
+    startBtn.innerText = "Start Over";
     return finalDecision;
   
 }

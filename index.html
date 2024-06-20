@@ -7,21 +7,24 @@
 		<link rel=" stylesheet" href="style.css" />
 	</head>
 	<body>
-		<main>
+		<main class="game-ui">
 			<h1>Rock Paper Scissors</h1>
-			<section class="game-ui">
-				<span id = "choice-el"></span >
-				<span id = "round-winner">Press start to begin</span >	
-			<section id="btns">
-				<button type="button" id ="rock" >✊</button> 
-				<button type="button" id="paper">✋</button> 
-				<button type="button" id="scissors">✌</button>
+			<section>
+				<div style="display:grid; font-size: 1rem;">
+					<div id="choice-el" style="display:flex; flex-wrap:wrap; justify-content:space-around; text-align:center;"></div >
+					<div id="score" style="margin:.5em; display:flex; justify-content:space-around"></div>
+					<p id="round-winner" style="margin:1em auto;">Press start to play</p >	
+			  	</div>
+				<div style="margin:1em auto .5em; padding:1em; display:flex; gap:1em; flex-wrap:wrap">
+					<button type="button" id ="rock" >✊</button> 
+					<button type="button" id="paper">✋</button> 
+					<button type="button" id="scissors">✌</button>
+				</div>
 			</section>
-				<span id="score"></span>
-				<button type="button" id="start-btn"  onclick="handleClick()">start</button>		
-			</section>
+			<button type="button" id="start-btn" onmousedown="handleClick()">Start</button>		
 		</main>
+		<footer>© 2023 Siyabonga Mahlalela</footer>
 		<script src="file.js"></script>
 	</body>
-	<footer>© 2023 Siyabonga Mahlalela</footer>
+	
 </html>
